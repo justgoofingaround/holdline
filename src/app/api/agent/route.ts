@@ -26,3 +26,6 @@ export async function POST(req: Request) {
   const r = await chat(message.trim(), history, conversationId);
   return Response.json({ output: { text: r.text }, blocked: r.blocked, invoices: r.invoices, engine: r.engine, conversation_id: conversationId });
 }
+
+// A model-backed run can take minutes; give it room when hosted.
+export const maxDuration = 300;

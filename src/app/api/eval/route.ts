@@ -16,3 +16,6 @@ export async function GET(req: Request) {
   }
   return Response.json({ reports, payments: invoices.length });
 }
+
+// A model-backed run can take minutes; give it room when hosted.
+export const maxDuration = 300;

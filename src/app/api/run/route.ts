@@ -35,3 +35,6 @@ export async function GET(req: Request) {
     headers: { "content-type": "text/event-stream", "cache-control": "no-cache, no-transform", "x-accel-buffering": "no" },
   });
 }
+
+// A model-backed run can take minutes; give it room when hosted.
+export const maxDuration = 300;
