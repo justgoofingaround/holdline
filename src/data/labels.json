@@ -1,0 +1,201 @@
+{
+ "planted": [
+  {
+   "invoiceId": "IV-00401",
+   "category": "duplicate",
+   "subtype": "exact_number",
+   "note": "Same invoice number and amount as IV-00340, paid 2026-10-26",
+   "exposure": 8170.22
+  },
+  {
+   "invoiceId": "IV-00402",
+   "category": "duplicate",
+   "subtype": "exact_number",
+   "note": "Same invoice number and amount as IV-00162, paid 2026-08-11",
+   "exposure": 1940
+  },
+  {
+   "invoiceId": "IV-00403",
+   "category": "duplicate",
+   "subtype": "exact_number",
+   "note": "Same invoice number and amount as IV-00343, paid 2026-10-17",
+   "exposure": 12445.56
+  },
+  {
+   "invoiceId": "IV-00404",
+   "category": "duplicate",
+   "subtype": "fuzzy_number",
+   "note": "Number KIT2668 is KIT-2668 without the dash (IV-00143, already paid)",
+   "exposure": 12851.16
+  },
+  {
+   "invoiceId": "IV-00405",
+   "category": "duplicate",
+   "subtype": "fuzzy_number",
+   "note": "Number OTC-01685-R is a re-keyed OTC-1685 (IV-00133, already paid)",
+   "exposure": 4455.77
+  },
+  {
+   "invoiceId": "IV-00407",
+   "category": "duplicate",
+   "subtype": "same_amount_window",
+   "note": "New number but same PO, lines and amount as IV-00406, invoiced 3 days earlier",
+   "exposure": 8580
+  },
+  {
+   "invoiceId": "IV-00408",
+   "category": "duplicate",
+   "subtype": "vendor_alias",
+   "note": "Same invoice as IV-00266, submitted under a second vendor record for the same company",
+   "exposure": 8576.28
+  },
+  {
+   "invoiceId": "IV-00409",
+   "category": "duplicate",
+   "subtype": "reissued_with_surcharge",
+   "note": "Re-issue of IV-00368 with a new number and a 3% surcharge line",
+   "exposure": 7159.67
+  },
+  {
+   "invoiceId": "IV-00410",
+   "category": "split",
+   "subtype": "under_threshold",
+   "note": "One of 3 invoices totalling $27,950, each under the $10,000 approval limit",
+   "exposure": 9400
+  },
+  {
+   "invoiceId": "IV-00411",
+   "category": "split",
+   "subtype": "under_threshold",
+   "note": "One of 3 invoices totalling $27,950, each under the $10,000 approval limit",
+   "exposure": 9650
+  },
+  {
+   "invoiceId": "IV-00412",
+   "category": "split",
+   "subtype": "under_threshold",
+   "note": "One of 3 invoices totalling $27,950, each under the $10,000 approval limit",
+   "exposure": 8900
+  },
+  {
+   "invoiceId": "IV-00413",
+   "category": "split",
+   "subtype": "under_threshold",
+   "note": "One of 2 same-day invoices totalling $19,730, each under the approval limit",
+   "exposure": 9980
+  },
+  {
+   "invoiceId": "IV-00414",
+   "category": "split",
+   "subtype": "under_threshold",
+   "note": "One of 2 same-day invoices totalling $19,730, each under the approval limit",
+   "exposure": 9750
+  },
+  {
+   "invoiceId": "IV-00415",
+   "category": "po_mismatch",
+   "subtype": "over_po_total",
+   "note": "Billed 18% above the purchase order",
+   "exposure": 671.95
+  },
+  {
+   "invoiceId": "IV-00416",
+   "category": "po_mismatch",
+   "subtype": "unordered_line",
+   "note": "Adds a fee line that is not on the purchase order (+25%)",
+   "exposure": 3168.77
+  },
+  {
+   "invoiceId": "IV-00417",
+   "category": "po_mismatch",
+   "subtype": "price_drift",
+   "note": "Unit prices 6% above the purchase order",
+   "exposure": 899.04
+  },
+  {
+   "invoiceId": "IV-00418",
+   "category": "po_mismatch",
+   "subtype": "billed_not_received",
+   "note": "Billed for the full order; only about 50% was received",
+   "exposure": 3835.79
+  },
+  {
+   "invoiceId": "IV-00419",
+   "category": "po_mismatch",
+   "subtype": "billed_not_received",
+   "note": "Billed for the full order; only about 60% was received",
+   "exposure": 3823.24
+  },
+  {
+   "invoiceId": "IV-00420",
+   "category": "po_mismatch",
+   "subtype": "unit_price_swap",
+   "note": "Unit price about 15% above the PO, masked by a lower quantity",
+   "exposure": 593.56
+  },
+  {
+   "invoiceId": "IV-00421",
+   "category": "bank_change",
+   "subtype": "unverified_email_change",
+   "note": "Bank details changed by email from a look-alike domain, never verified by callback",
+   "exposure": 9704.24
+  },
+  {
+   "invoiceId": "IV-00422",
+   "category": "bank_change",
+   "subtype": "unverified_email_change",
+   "note": "Bank details changed by email from a look-alike domain, never verified by callback",
+   "exposure": 19225.42
+  },
+  {
+   "invoiceId": "IV-00423",
+   "category": "bank_change",
+   "subtype": "unverified_email_change",
+   "note": "Bank details changed by email from a look-alike domain, never verified by callback",
+   "exposure": 5572.35
+  },
+  {
+   "invoiceId": "IV-00424",
+   "category": "bank_change",
+   "subtype": "unverified_email_change",
+   "note": "Bank details changed by email from a look-alike domain, never verified by callback",
+   "exposure": 7849.64
+  },
+  {
+   "invoiceId": "IV-00425",
+   "category": "bank_change",
+   "subtype": "account_not_on_file",
+   "note": "Invoice remit-to account ending 9806 does not match the vendor record",
+   "exposure": 8341.24
+  },
+  {
+   "invoiceId": "IV-00426",
+   "category": "bank_change",
+   "subtype": "account_not_on_file",
+   "note": "Invoice remit-to account ending 8464 does not match the vendor record",
+   "exposure": 4387.58
+  }
+ ],
+ "benign": [
+  {
+   "invoiceId": "IV-00427",
+   "note": "Two separate legal matters billed in the same week; legitimate"
+  },
+  {
+   "invoiceId": "IV-00428",
+   "note": "Two separate legal matters billed in the same week; legitimate"
+  },
+  {
+   "invoiceId": "IV-00430",
+   "note": "Second of two agreed 50% milestone invoices on the same PO; legitimate"
+  },
+  {
+   "invoiceId": "IV-00431",
+   "note": "Bank change was verified by callback; legitimate"
+  },
+  {
+   "invoiceId": "IV-00432",
+   "note": "Bank change was verified by callback; legitimate"
+  }
+ ]
+}

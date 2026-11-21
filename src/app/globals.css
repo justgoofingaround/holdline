@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f3ec;
+  --surface: #fffdf7;
+  --raised: #ffffff;
+  --ink: #16150f;
+  --ink2: #55524a;
+  --ink3: #85827a;
+  --line: rgba(22, 21, 15, 0.1);
+  --line2: rgba(22, 21, 15, 0.2);
+  --hold: #c8332f;
+  --holdsoft: #fbe8e4;
+  --ok: #0a6f0a;
+  --okfill: #0ca30c;
+  --oksoft: #e4f3e1;
+  --track: rgba(22, 21, 15, 0.07);
+  --shadow: 0 1px 2px rgba(22, 21, 15, 0.05), 0 12px 32px -12px rgba(22, 21, 15, 0.18);
+  --dot: rgba(22, 21, 15, 0.06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10100e;
+    --surface: #191917;
+    --raised: #222220;
+    --ink: #f2f0e9;
+    --ink2: #b8b5aa;
+    --ink3: #807d73;
+    --line: rgba(255, 255, 255, 0.1);
+    --line2: rgba(255, 255, 255, 0.22);
+    --hold: #f0605a;
+    --holdsoft: #3a1917;
+    --ok: #3cc43c;
+    --okfill: #0ca30c;
+    --oksoft: #132e17;
+    --track: rgba(255, 255, 255, 0.08);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -12px rgba(0, 0, 0, 0.7);
+    --dot: rgba(255, 255, 255, 0.05);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10100e;
+  --surface: #191917;
+  --raised: #222220;
+  --ink: #f2f0e9;
+  --ink2: #b8b5aa;
+  --ink3: #807d73;
+  --line: rgba(255, 255, 255, 0.1);
+  --line2: rgba(255, 255, 255, 0.22);
+  --hold: #f0605a;
+  --holdsoft: #3a1917;
+  --ok: #3cc43c;
+  --okfill: #0ca30c;
+  --oksoft: #132e17;
+  --track: rgba(255, 255, 255, 0.08);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -12px rgba(0, 0, 0, 0.7);
+  --dot: rgba(255, 255, 255, 0.05);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-ink3: var(--ink3);
+  --color-line: var(--line);
+  --color-line2: var(--line2);
+  --color-hold: var(--hold);
+  --color-holdsoft: var(--holdsoft);
+  --color-ok: var(--ok);
+  --color-okfill: var(--okfill);
+  --color-oksoft: var(--oksoft);
+  --color-track: var(--track);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-serif-display), "Iowan Old Style", Georgia, serif;
+  --shadow-card: var(--shadow);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--bg);
 }
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  font-weight: 500;
+}
+
+@keyframes tile-check {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.72); opacity: 0.55; }
+}
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+@keyframes ring {
+  0% { transform: scale(0.8); opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes sheen {
+  0% { transform: translateX(-120%); }
+  60%, 100% { transform: translateX(220%); }
+}
+@keyframes caret {
+  50% { opacity: 0; }
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  animation: sheen 2.8s ease-in-out infinite;
+}
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line2) transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
